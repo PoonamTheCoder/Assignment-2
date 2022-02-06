@@ -1,0 +1,79 @@
+Question 5: 
+	- Write a Java program to find the sum of two arrays elements?
+		array1[] = {10, 20, 30, 40, 50};  // Take values form Keyboard
+		array2[] = {9, 18, 27, 36, 45};	 //  Take Values form keyboard
+
+Code:-
+
+import java.util.Scanner;
+import java.util.Arrays;
+class SumOfTwoArraysElements 
+{
+	public static void main(String[] args) 
+	{
+		int arraySize1,arraySize2;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter number of elements in first Array :");
+		arraySize1 = sc.nextInt();
+		System.out.println("Enter number of elements in second Array :");
+		arraySize2 = sc.nextInt();
+
+		if(arraySize1!=arraySize2){
+		 System.out.println("Both array must have Same number of elements");
+		 return; //stop
+		}
+		//declare array with given size.
+		int array1[] = new int[arraySize1];
+		int array2[] = new int[arraySize1];
+		int array3[] = new int[arraySize1];
+		
+		//take inputs for Array1.
+		System.out.println("Enter first Array Elemenets: ");
+		for(int i=0;i<array1.length;i++){
+			array1[i] = sc.nextInt();
+		}
+
+		//take inputs for Array2.
+		System.out.println("Enter second Array Elemenets: ");
+		for(int i=0;i<array2.length;i++){
+			array2[i] = sc.nextInt();
+		}
+		for(int i=0;i<array3.length;i++){
+			array3[i] = array1[i]+array2[i];
+		}
+		//Display result.
+		System.out.println("Addition of Two Array Elements are :" +Arrays.toString(array3));	  
+	}
+}
+
+Output:----------------------------------------------------------------------------------------------------------
+
+C:\WorkSpaceEP\POC 2\Quetion 5>javac SumOfTwoArraysElements.java
+
+C:\WorkSpaceEP\POC 2\Quetion 5>java SumOfTwoArraysElements
+Enter number of elements in first Array :
+5
+Enter number of elements in second Array :
+5
+Enter first Array Elemenets:
+4
+5
+7
+8
+9
+Enter second Array Elemenets:
+20
+4
+10
+2
+6
+Addition of Two Array Elements are :[24, 9, 17, 10, 15]
+--------------------------------------------------------------------------------------------------------------------
+C:\WorkSpaceEP\POC 2\Quetion 5>javac SumOfTwoArraysElements.java
+
+C:\WorkSpaceEP\POC 2\Quetion 5>java SumOfTwoArraysElements
+Enter number of elements in first Array :
+6
+Enter number of elements in second Array :
+3
+Both array must have Same number of elements

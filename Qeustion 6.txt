@@ -1,0 +1,85 @@
+Qeustion 6: Write a program in Java to Count Repeated Elements in Array?
+
+		Example1- an unsorted array,
+		Array = { 50, 20, 10, 40, 20, 10, 10, 60, 30, 70 };
+		Total Repeated elements: 2
+		Repeated elements are: 20 10
+
+Code:-
+
+import java.util.Scanner;
+import java.util.Arrays;
+class CountOfRepeatedElements
+{
+	public static void main(String[] args) {
+
+	  int array[],num;
+	  Scanner sc = new Scanner(System.in);
+	  System.out.println("Please Enter number of elements of an Array:: ");
+	  num = sc.nextInt();
+	  array = new int[num];
+	  System.out.println("-------------------------------------------------");
+	  System.out.println("Please Enter elements of an Array:");
+		
+		for(int i=0;i<num;i++)
+		{
+		array[i] =sc.nextInt();
+		}
+	  
+                     // create another array of similar size
+                     int temp[] = new int[array.length];
+                     int count = 0;
+      
+                    for(int i=0; i<array.length; i++) {
+                    int element = array[i];
+                    boolean flag = false;
+         
+		 // check current element is already 
+                    for(int j=0; j<count; j++) {
+                    if(temp[j] == element) {
+                    flag = true;
+                    break;
+                  }
+         } 
+                     if(flag) {
+                     continue;
+                      }     
+                    // check occurrence of element
+                    for(int j=i+1; j<array.length; j++) {
+                    if(array[j] == element) {
+                    temp[count++] = element;
+                    break;
+            }
+         }
+      }
+      // display total repeated elements
+      System.out.println("Total Repeated elements Are: " +count);
+      System.out.println("Repeated elements are: ");
+      for (int i = 0; i < count; i++) {
+      System.out.print(temp[i]+" ");
+      }      
+   }
+}
+
+Output:-----------------------------------------------------------------------------------------------
+
+C:\WorkSpaceEP\POC 2\Question 6>javac CountOfRepeatedElements.java
+
+C:\WorkSpaceEP\POC 2\Question 6>java CountOfRepeatedElements
+Please Enter number of elements of an Array::
+10
+-------------------------------------------------
+Please Enter elements of an Array:
+1
+1
+20
+10
+10
+4
+5
+6
+8
+8
+Total Repeated elements: 3
+Repeated elements are:
+1 10 8

@@ -1,0 +1,86 @@
+Question 3: Follow naming convention rule
+	
+	- Write a program to check if elements of an array are same or not it read from front or back. E.g.
+		 int[] a = {2,3,15,15,3,2};
+
+
+Code:-
+
+import java.util.Scanner;
+import java.util.Arrays;
+public class ArrayElementSameOrNot 
+{
+	public static void main(String[] args) {
+
+		boolean flag = false;
+		int arraySize;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the Number of Elements :");
+		arraySize = sc.nextInt();
+		System.out.println("Enter the Elements of Array :");
+		
+		int[] elementsSameOrNot = new int[arraySize];
+		int[] newelementsSameOrNot = new int[arraySize];
+		for (int i = 0; i < elementsSameOrNot.length; i++) {
+			elementsSameOrNot[i] = sc.nextInt();
+		}
+		System.out.println("Array elements are:");
+		System.out.println(Arrays.toString(elementsSameOrNot));
+		int j = elementsSameOrNot.length - 1;
+		for (int i = 0; i < elementsSameOrNot.length; i++, j--) {
+			newelementsSameOrNot[j] = elementsSameOrNot[i];
+		}
+		
+		for (int i = 0; i <= newelementsSameOrNot.length - 1; i++) {
+			if (elementsSameOrNot[i] == newelementsSameOrNot[i]) {
+				flag = true;
+			} else {
+				flag = false;
+			}
+		}
+		if (flag == true) {
+			System.out.println("Elements of array are same.!!");
+		} else {
+			System.out.println("Elements of array are not same.!!");
+		}
+
+		System.out.println(Arrays.toString(elementsSameOrNot));
+
+	}
+}
+
+Output:---------------------------------------------------------------------------------------------------------
+
+C:\WorkSpaceEP\POC 2\Quetion 3>javac ArrayElementSameOrNot.java
+
+C:\WorkSpaceEP\POC 2\Quetion 3>java ArrayElementSameOrNot
+Enter the Number of Elements :
+5
+Enter the Elements of Array :
+10
+1
+2
+4
+12
+Array elements are:
+[10, 1, 2, 4, 12]
+Elements of array are not same.!!
+[10, 1, 2, 4, 12]
+
+
+C:\WorkSpaceEP\POC 2\Quetion 3>javac ArrayElementSameOrNot.java
+
+C:\WorkSpaceEP\POC 2\Quetion 3>java ArrayElementSameOrNot
+Enter the Number of Elements :
+6
+Enter the Elements of Array :
+10
+5
+11
+11
+5
+10
+Array elements are:
+[10, 5, 11, 11, 5, 10]
+Elements of array are same.!!
+[10, 5, 11, 11, 5, 10]

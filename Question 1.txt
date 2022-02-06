@@ -1,0 +1,88 @@
+Question 1: Follow naming convention rule
+ 
+	- Take 20 integer inputs from user and print the following:
+	- number of positive numbers
+	- number of negative numbers
+	- number of odd numbers
+	- number of even numbers
+	- number of 0s.
+
+Code:-
+
+import java.util.Scanner;
+import java.util.Arrays;
+class CountNumberType 
+{
+	public static void main(String[] args) 
+	{
+		// intialize and declaring the objects and Array
+		int number,positive=0,negative=0,zero=0,even=0,odd=0,i;
+		int []array = new int[20];
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the Number of Elements : "); // Enter size of the array.
+		number = sc.nextInt();
+		System.out.println("Enter the Elements of Array :");// Enter array elements.
+		
+		//Conditions to calculate the type of the number.
+		//condition to check positive,negative,zero's,even and odd numbers.
+		for(i = 0;i<number;i++)
+			{
+			array[i] = sc.nextInt();
+		if(array[i] > 0)
+			positive++;
+		if(array[i] < 0)
+			negative++;
+		if(array[i]==0)
+			zero++;
+		if(array[i]%2==0)
+			even++;
+		if(array[i]%2!=0)
+			odd++;
+		}
+	   //print count of number type.
+	    System.out.println("Elements of the array are: "+Arrays.toString(array));
+	    System.out.println("********************************************************");
+		System.out.println("Count of Positive Numbers in an Array Are :: "+positive );
+		System.out.println("Count of Negative Nmubers in an Array Are :: "+negative);
+		System.out.println("Count of Zero's Are :: "+zero);
+		System.out.println("Count of Even numbers in this array are: " +even);
+		System.out.println("Count of Odd numbers in this array are: " +odd);
+    }
+  }
+
+
+Output:--------------------------------------------------------------------------------------------------
+
+C:\WorkSpaceEP\POC 2\Quetion 1>javac CountNumberType.java
+
+C:\WorkSpaceEP\POC 2\Quetion 1>java CountNumberType
+Enter the Number of Elements :
+20
+Enter the Elements of Array :
+4
+-5
+0
+6
+3
+4
+8
+9
+-7
+10
+20
+11
+12
+7
+22
+30
+21
+16
+5
+15
+Elements of the array are: [4,-5,0,6,3,4,8,9,-7,10,20,11,12,7,22,30,21,16,5,15]
+********************************************************
+Count of Positive Numbers in an Array Are :: 17
+Count of Negative Nmubers in an Array Are :: 2
+Count of Zero's Are :: 1
+Count of Even numbers in this array are: 11
+Count of Odd numbers in this array are: 9

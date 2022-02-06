@@ -1,0 +1,64 @@
+Question 2: Follow naming convention rule
+	
+	- Write a program to find the sum and product of all elements of an array.
+
+Code :
+
+import java.util.Scanner;
+import java.util.Arrays;
+public class ArraySumProduct 
+{
+	public static void main(String[] args) 
+	{
+		//Initilize array.
+		int array[],num;
+		int sum=0,product=1;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Please Enter number of elements of an Array:: ");
+		num = sc.nextInt();
+		array = new int[num];
+		System.out.println("-------------------------------------------------");
+		System.out.println("Please Enter elements of an Array:");
+		
+		for(int i=0;i<num;i++)
+		{
+		System.out.println("Please Enter "+(i+1)+" element:");
+		array[i] =sc.nextInt();
+		}
+		for(int i=0;i<num;i++){
+			sum = sum + array[i];
+			product = product * array[i];
+		}
+		System.out.println("Elements of the array are: "+Arrays.toString(array));
+		System.out.println("*************************************************");
+		System.out.println("Sum of Array Elements is:"+sum);
+		System.out.println();
+		System.out.println("Product of Array Elements is:"+product);
+
+	}
+}
+
+
+
+Output:-
+
+C:\WorkSpaceEP\POC 2\Quetion 2>java ArraySumProduct
+Please Enter number of elements of an Array::
+5
+-------------------------------------------------
+Please Enter elements of an Array:
+Please Enter 1 element:
+10
+Please Enter 2 element:
+20
+Please Enter 3 element:
+30
+Please Enter 4 element:
+12
+Please Enter 5 element:
+15
+Elements of the array are: [10, 20, 30, 12, 15]
+*************************************************
+Sum of Array Elements is:87
+
+Product of Array Elements is:1080000
